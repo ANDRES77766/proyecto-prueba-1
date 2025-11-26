@@ -3,12 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANDRES</title>
+    <title>Andrés de Jesús León Aguilar | Estudiante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div>
-        <h1>andres de jesus leon aguilar </h1>
-        <p>ingeniero en sistemas computacionales</p>
-    </div>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">AJLA</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#estudios">Estudios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">Hola, soy</span>
+                    <span class="name">Andrés de Jesús León Aguilar</span>
+                </h1>
+                <p class="hero-subtitle">Estudiante de Primer Semestre</p>
+                <p class="hero-description">
+                    Apasionado por el aprendizaje y el desarrollo continuo. 
+                    Comprometido con la excelencia académica y el crecimiento personal.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#sobre-mi" class="btn btn-primary">Conoce más</a>
+                    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-graduate"></i>
+                        <p class="image-text">Tu Foto Aquí</p>
+                    </div>
+                    <div class="floating-card card-1">
+                        <i class="fas fa-book"></i>
+                        <span>Estudiante</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-rocket"></i>
+                        <span>1er Semestre</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                Sobre Mí
+            </h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="profile-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <p>Espacio para tu fotografía profesional</p>
+                        </div>
+                    </div>
+                    <div class="image-background"></div>
+                </div>
+                <div class="about-text">
+                    <h3>Conoce mi trayectoria</h3>
+                    <p>
+                        Soy <strong>Andrés de Jesús León Aguilar</strong>, actualmente cursando 
+                        el primer semestre de mis estudios universitarios. Me caracterizo por ser 
+                        una persona dedicada, curiosa y siempre dispuesta a enfrentar nuevos desafíos.
+                    </p>
+                    <p>
+                        Mi objetivo es adquirir conocimientos sólidos y desarrollar habilidades 
+                        que me permitan crecer tanto en el ámbito académico como profesional. 
+                        Creo firmemente en el poder del aprendizaje continuo y la perseverancia.
+                    </p>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Compromiso académico</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Trabajo en equipo</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Adaptabilidad</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proactividad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estudios -->
+    <section id="estudios" class="education">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                Mi Trayectoria Académica
+            </h2>
+            <div class="education-content">
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Primer Semestre</h3>
+                                <span class="timeline-date">Actual</span>
+                            </div>
+                            <p class="timeline-description">
+                                Iniciando mi camino universitario con entusiasmo y dedicación. 
+                                Enfocado en establecer bases sólidas para mi formación profesional.
+                            </p>
+                            <div class="timeline-badge">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Objetivos Futuros</h3>
+                                <span class="timeline-date">En Progreso</span>
+                            </div>
+                            <p class="timeline-description">
+                                Continuar desarrollando habilidades técnicas y blandas que me 
+                                permitan destacar en mi área de estudio y contribuir positivamente 
+                                a la sociedad.
+                            </p>
+                            <div class="timeline-badge">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h4>1er</h4>
+                        <p>Semestre</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>100%</h4>
+                        <p>Motivación</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <h4>∞</h4>
+                        <p>Metas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                Contacto
+            </h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h3>¡Conectemos!</h3>
+                    <p>
+                        Estoy siempre abierto a nuevas oportunidades de aprendizaje, 
+                        colaboración y networking. No dudes en contactarme.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>andres.leon@email.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Ubicación</h4>
+                                <p>México</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" id="nombre" required>
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensaje" rows="5" required></textarea>
+                            <label for="mensaje">Mensaje</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Enviar Mensaje
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Diseñado y Desarrollado por <strong>Andrés de Jesús León Aguilar</strong></p>
+            <p class="footer-year">© 2024 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
