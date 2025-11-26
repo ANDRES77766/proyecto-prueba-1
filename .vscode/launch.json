@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open pag.html",
+            "file": "c:\\Users\\computo3\\.vscode\\extensions\\continue.continue-1.2.11-win32-x64\\pag.html"
+        }
+    ]
+}
