@@ -19,6 +19,121 @@
 
         .container {
             width: 80%;
+        .chatbot {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 2000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,#4f46e5,#06b6d4);
+            box-shadow: 0 8px 24px rgba(79,70,229,0.24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .chat-window {
+            width: 360px;
+            max-width: calc(100vw - 48px);
+            height: 520px;
+            background: linear-gradient(180deg, #ffffff, #f8fafc);
+            border-radius: 12px;
+            box-shadow: 0 12px 48px rgba(2,6,23,0.12);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px;
+        }
+
+        .chat-header {
+            display:flex;
+            align-items:center;
+            gap:12px;
+            padding:12px 16px;
+            background: linear-gradient(90deg,#0ea5a4,#2563eb);
+            color:white;
+        }
+
+        .chat-messages {
+            padding: 12px;
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(248,250,252,0.6));
+        }
+
+        .msg {
+            max-width: 78%;
+            padding: 10px 12px;
+            border-radius: 12px;
+            font-size: 0.95em;
+            line-height: 1.3;
+            word-wrap: break-word;
+        }
+
+        .msg.user {
+            margin-left: auto;
+            background: linear-gradient(90deg,#06b6d4,#4f46e5);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .msg.bot {
+            margin-right: auto;
+            background: #f1f5f9;
+            color: #0f172a;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-input {
+            padding: 10px;
+            display:flex;
+            gap:8px;
+            align-items:center;
+            border-top: 1px solid #e6eef8;
+            background: #fff;
+        }
+
+        .chat-input input {
+            flex:1;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #dbeafe;
+            outline: none;
+            font-size: 0.95em;
+        }
+
+        .chat-input button.send {
+            background: linear-gradient(135deg,#4f46e5,#06b6d4);
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .typing {
+            display:inline-block;
+            opacity:0.85;
+            font-style: italic;
+            color: #64748b;
+        }
+
+        @media (max-width: 420px) {
+            .chat-window { height: 420px; width: 96vw }
+            .chat-toggle { width:54px; height:54px }
+        }
             margin: auto;
             overflow: hidden;
             padding: 0 20px;
@@ -886,6 +1001,37 @@
             <p class="footer-year">© 2024 - Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <!-- Chatbot Assistant Markup -->
+    <div class="chatbot" aria-live="polite">
+        <div id="chatContainer" style="display:none">
+            <div class="chat-window" id="chatWindow" role="dialog" aria-label="Asistente">
+                <div class="chat-header">
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center">🤖</div>
+                        <div>
+                            <div style="font-weight:700">Asistente</div>
+                            <div style="font-size:0.85em;opacity:0.9">Conectado a Gemini Flash</div>
+                        </div>
+                    </div>
+                    <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+                        <button id="closeChat" title="Cerrar" style="background:transparent;border:none;color:white;cursor:pointer;font-size:1.1em">✕</button>
+                    </div>
+                </div>
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-input">
+                    <input id="chatInput" type="text" placeholder="Escribe tu mensaje... (ej. ¿Cómo puedo mejorar mis estudios?)" aria-label="Mensaje" />
+                    <button class="send" id="sendBtn">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="chatToggleWrapper">
+            <button class="chat-toggle" id="chatToggle" aria-expanded="false" aria-controls="chatWindow" title="Abrir asistente">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.48 2 2 5.58 2 10c0 1.95.94 3.77 2.58 5.18L4 20l4.98-1.58C10.9 19.22 11.94 19.5 13 19.5c5.52 0 10-3.58 10-8.5S17.52 2 12 2z" fill="white"/></svg>
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
