@@ -4,8 +4,620 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrés de Jesús León Aguilar | Estudiante</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            padding-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .section-title .title-number {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* Navegación */
+        .navbar {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo-text {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #f4f4f4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #e9ecef;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            margin-left: 15px;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+
+        .image-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #888;
+            font-size: 4em;
+        }
+
+        .floating-card {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .floating-card i {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        .card-1 {
+            top: 10%;
+            left: -10px;
+            transform: translateX(20px);
+        }
+
+        .card-2 {
+            bottom: 10%;
+            right: -10px;
+            transform: translateX(-20px);
+        }
+
+        /* Sobre Mí */
+        .about {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+        }
+
+        .image-frame {
+            width: 300px;
+            height: 400px;
+            border: 10px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #888;
+            font-size: 3em;
+        }
+
+        .image-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #007bff;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .about-text h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skills-list .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .skills-list .skill-item i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        /* Estudios */
+        .education {
+            padding: 80px 0;
+            background-color: #e9ecef;
+        }
+
+        .education-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .timeline {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item .timeline-dot {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #007bff;
+            border-radius: 50%;
+            top: 5px;
+            left: -8px;
+        }
+
+        .timeline-item .timeline-content {
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .timeline-header h3 {
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        .timeline-item .timeline-header span {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .timeline-item .timeline-description {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .timeline-item .timeline-badge {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #007bff;
+            border-radius: 50%;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+        }
+
+        .stats-grid {
+            flex: 1;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-card .stat-icon {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .stat-card h4 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 1em;
+            color: #6c757d;
+        }
+
+        /* Contacto */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .contact-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .contact-text h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-text p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item .contact-icon {
+            margin-right: 15px;
+            font-size: 1.5em;
+            color: #007bff;
+        }
+
+        .contact-item .contact-details h4 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .contact-item .contact-details p {
+            font-size: 1em;
+            color: #6c757d;
+        }
+
+        .social-links {
+            display: flex;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-form {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            color: #888;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #007bff;
+        }
+
+        .contact-form input:focus + label, .contact-form input:valid + label,
+        .contact-form textarea:focus + label, .contact-form textarea:valid + label {
+            top: -8px;
+            font-size: 0.8em;
+            color: #007bff;
+            background-color: #fff;
+            padding: 0 5px;
+            left: 8px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                margin-top: 10px;
+                flex-direction: column;
+            }
+
+            .navbar ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .hero-text, .hero-image {
+                flex: 1;
+                padding: 10px;
+            }
+
+            .hero-title {
+                font-size: 2.5em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3em;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image, .about-text {
+                flex: 1;
+                padding: 10px;
+            }
+
+            .education-content {
+                flex-direction: column;
+            }
+
+            .timeline, .stats-grid {
+                flex: 1;
+                padding: 10px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .contact-text, .contact-form {
+                flex: 1;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navegación -->
@@ -253,7 +865,8 @@
                             <label for="email">Email</label>
                         </div>
                         <div class="form-group">
-                            <textarea id="mensaje" rows="5" required></textarea>
+                            <textarea id="mensaje" rows="5" required>
+                            </textarea>
                             <label for="mensaje">Mensaje</label>
                         </div>
                         <button type="submit" class="btn btn-primary">
